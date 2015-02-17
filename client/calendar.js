@@ -28,7 +28,13 @@ Template.calendar.rendered = function(){
 			})
 			callback(events);
 		},
-		editable:true
+		editable:true,
+    header: {
+              //center: 'month,agendaFourDay' // buttons for switching between views
+              left:   'title',
+              center: '',
+              right:  'prev,next'
+          },
 	});
 }
 Template.calendar.showEditEvent = function(){
@@ -79,6 +85,7 @@ Meteor.startup(function() {
 		$calendar.fullCalendar('removeEvents');
 		$calendar.fullCalendar('addEventSource', entries);
 		$calendar.fullCalendar('rerenderEvents');
+
 	});
 });
 
